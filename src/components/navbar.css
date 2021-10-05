@@ -17,18 +17,18 @@
     height: 50px;
 }
 
-ul {
+.NavBar ul {
     display: flex;
     list-style: none;
     padding: 1em;
     color: #3a3a3a;
 }
 
-li {
+.NavBar li {
     padding: 1em;
 }
 
-li:hover {
+.NavBar li:hover {
     color: #eee;
 
     font-style: italic;
