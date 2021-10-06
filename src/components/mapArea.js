@@ -11,7 +11,7 @@ function MapArea () {
                 </div>
                 <div id='listings' className='listings'></div>
             </div>
-            <div id="map" class="map">
+            <div id="map" className="map">
                 <Map />
             </div>
         </div>
