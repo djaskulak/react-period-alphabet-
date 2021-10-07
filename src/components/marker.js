@@ -1,6 +1,13 @@
 import React from 'react';
 import './marker.css';
+import clinics from '../clinics.json'
 
-const Marker = ({ id }) => <div id={`marker-${id}`} className="marker" />;
+function Marker () {
+    return (
+        <div className="Marker">
 
-export default Marker;
+        </div>
+    )
+}
+
+export default Marker
