@@ -1,131 +1,157 @@
 [
     {
-        "title": "Accessibility",
+        "letter": "A",
+        "title": "ccessibility",
         "content": "",
         "image": "A.jpg"
     },
     {
-        "title": "Bloating",
+        "letter": "B",
+        "title": "loating",
         "content": "",
         "image": "B.jpg"
     },
     {
-        "title": "Contraceptives",
+        "letter": "C",
+        "title": "ontraceptives",
         "content": "",
         "image": "C.jpg"
     },
     {
-        "title": "Discharge",
+        "letter": "D",
+        "title": "ischarge",
         "content": "",
         "image": "D.jpg"
     },
     {
-        "title": "Empower",
+        "letter": "E",
+        "title": "mpower",
         "content": "",
         "image": "E.jpg"
     },
     {
-        "title": "Feelings",
+        "letter": "F",
+        "title": "eelings",
         "content": "",
         "image": "F.jpg"
     },
     {
-        "title": "Gym Class",
+        "letter": "G",
+        "title": "ym Class",
         "content": "",
         "image": "G.jpg"
     },
     {
-        "title": "Habits",
+        "letter": "H",
+        "title": "abits",
         "content": "",
         "image": "H.jpg"
     },
     {
-        "title": "Intercourse",
+        "letter": "I",
+        "title": "ntercourse",
         "content": "",
         "image": "I.jpg"
     },
     {
-        "title": "Jargon",
+        "letter": "J",
+        "title": "argon",
         "content": "",
         "image": "J.jpg"
     },
     {
-        "title": "Kissing",
+        "letter": "K",
+        "title": "issing",
         "content": "",
         "image": "K.jpg"
     },
     {
-        "title": "LGBTQIA",
+        "letter": "L",
+        "title": "GBTQIA",
         "content": "",
         "image": "L.jpg"
     },
     {
-        "title": "Menstrual Products",
+        "letter": "M",
+        "title": "enstrual Products",
         "content": "",
         "image": "M.jpg"
     },
     {
-        "title": "Nausea",
+        "letter": "N",
+        "title": "ausea",
         "content": "",
         "image": "N.jpg"
     },
     {
-        "title": "Ovulation",
+        "letter": "O",
+        "title": "vulation",
         "content": "",
         "image": "O.jpg"
     },
     {
-        "title": "Puberty",
+        "letter": "P",
+        "title": "uberty",
         "content": "",
         "image": "P.jpg"
     },
     {
-        "title": "Questions",
+        "letter": "Q",
+        "title": "uestions",
         "content": "",
         "image": "Q.jpg"
     },
     {
-        "title": "Resources",
+        "letter": "R",
+        "title": "esources",
         "content": "",
         "image": "R.jpg"
     },
     {
-        "title": "STD/TIs",
+        "letter": "S",
+        "title": "TD/TIs",
         "content": "",
-        "image": "A.jpg"
+        "image": "S.jpg"
     },
     {
-        "title": "Tender Breasts",
+        "letter": "T",
+        "title": "ender Breasts",
         "content": "",
         "image": "T.jpg"
     },
     {
-        "title": "Underwear",
+        "letter": "U",
+        "title": "nderwear",
         "content": "",
-        "image": "A.jpg"
+        "image": "U.jpg"
     },
     {
-        "title": "Vulva",
+        "letter": "V",
+        "title": "ulva",
         "content": "",
         "image": "V.jpg"
     },
     {
-        "title": "Wellness",
+        "letter": "W",
+        "title": "ellness",
         "content": "",
         "image": "W.jpg"
     },
     {
-        "title": "XOXO",
+        "letter": "X",
+        "title": "OXO",
         "content": "",
         "image": "X.jpg"
     },
     {
-        "title": "Yeast",
+        "letter": "Y",
+        "title": "east",
         "content": "",
         "image": "Y.jpg"
     },
     {
-        "title": "Zzz's",
+        "letter": "Z",
+        "title": "zz's",
         "content": "",
         "image": "Z.jpg"
     }

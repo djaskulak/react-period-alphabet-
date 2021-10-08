@@ -5,9 +5,12 @@ function MapArea () {
 
     return (
         <div className="MapArea">
+            <div className="banner">
+                <h1>MAP</h1>
+            </div>
             <div className='sidebar'>
                 <div className='heading'>
-                    <h1>Map of Womens Health Clinics</h1>
+                    <h1>Womens Health Clinics</h1>
                 </div>
                 <div id='listings' className='listings'>
                 </div>

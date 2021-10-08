@@ -4,11 +4,17 @@ import './cards.css'
 function Cards () {
     return (
         <div className="Cards">
+            <div className="banner">
+                <h1>ALPHABET</h1>
+            </div>
             <ul className="alphabet">
                 {alphabet.map(letter => 
                     <li className="card">
-                        <h3>{letter.title}</h3>
                         <img src={process.env.PUBLIC_URL + '/images/' + letter.image} alt="card"/>
+                        <div className="word">
+                            <h1>{letter.letter}</h1>
+                            <h3>{letter.title}</h3>
+                        </div>
                     </li>
                 )}
             </ul>

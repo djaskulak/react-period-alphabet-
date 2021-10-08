@@ -2,16 +2,28 @@
     margin-top: 100px;
 }
 
+.banner {
+    background-color: #517A6F;
+    height: 6em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.banner h1 {
+    font-family: "Bungee Shade";
+    font-size: 4em;
+    color: #F7B9AB;
+}
+
 .alphabet {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-gap: 2em;
 	max-width: 1200px;
-	/* margin: auto;
-	padding: 2em; */
 }
 
 .card {
@@ -29,12 +41,31 @@
 }
 
 .card img {
-    width: 100%;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.card .word {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.card h1{
+    font-family: "Bungee Shade";
+    font-size: 3em;
+    color: black;
+    padding-right: 0;
+    margin-bottom: 0;
 }
 
 .card h3 {
-    font-size: 1em;
-    font-family: "Bungee Shade";
+    font-size: 2em;
+    font-family: "Bungee";
+    padding-left: 0;
+    margin-left: 0;
+    margin-bottom: 0;
 }
 
 .card h3 {
