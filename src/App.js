@@ -1,5 +1,6 @@
 import './App.css';
 import NavBar from './components/navbar'
+import Intro from './components/intro';
 import Cards from './components/cards'
 import MapArea from './components/mapArea'
 
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <Intro />
       <Cards />
       <MapArea />
     </div>

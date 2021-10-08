@@ -1,7 +1,3 @@
-.Cards {
-    margin-top: 100px;
-}
-
 .banner {
     background-color: #517A6F;
     height: 6em;
@@ -13,7 +9,7 @@
 .banner h1 {
     font-family: "Bungee Shade";
     font-size: 4em;
-    color: #F7B9AB;
+    color: #F7B9AB
 }
 
 .alphabet {
@@ -21,7 +17,7 @@
     margin: 0;
     padding: 0;
     display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 2em;
 	max-width: 1200px;
 }
