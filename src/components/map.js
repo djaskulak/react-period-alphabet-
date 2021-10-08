@@ -21,14 +21,11 @@ function ClinicList({ features }) {
         link.href = '#';
         link.className = 'title';
         link.id = `link-${properties.id}`;
-        link.innerHTML = `${properties.address}`;
+        link.innerHTML = `${properties.name}`;
     
         /* Add details to the individual listing. */
         const details = listing.appendChild(document.createElement('div'));
-        details.innerHTML = `${properties.city}`;
-        if (properties.name) {
-            details.innerHTML += ` · ${properties.name}`
-        }
+        details.innerHTML = `${properties.address}`;
         if (properties.phone) {
             details.innerHTML += ` · ${properties.phoneFormatted}`;
         }
@@ -36,12 +33,45 @@ function ClinicList({ features }) {
             const roundedDistance = Math.round(properties.distance * 100) / 100;
             details.innerHTML += `<div><strong>${roundedDistance} miles away</strong></div>`;
         }
+
+        link.addEventListener('click', function () {
+            for (const feature of features) {
+              if (this.id === `link-${feature.properties.id}`) {
+                flyToClinic(feature);
+                createPopUp(feature);
+              }
+            }
+            const activeItem = document.getElementsByClassName('active');
+            if (activeItem[0]) {
+              activeItem[0].classList.remove('active');
+            }
+            this.parentNode.classList.add('active');
+        });
     }
+}
+
+function flyToClinic(currentFeature) {
+    Map.flyTo({
+      center: currentFeature.geometry.coordinates,
+      zoom: 15
+    });
+}
+  
+function createPopUp(currentFeature) {
+    const popUps = document.getElementsByClassName('mapboxgl-popup');
+    /** Check if there is already a popup on the map and if so, remove it */
+    if (popUps[0]) popUps[0].remove();
+  
+    const popup = new mapboxgl.Popup({ closeOnClick: false })
+      .setLngLat(currentFeature.geometry.coordinates)
+      .setHTML(`<h4>${currentFeature.properties.name}</h4>`)
+      .addTo(Map);
 }
 
 function Map () {
     const mapContainer = useRef(null);
     const map = useRef(null);
+    /* connecting the json with clinic data using redux */
     const data = useSelector((state) => state.connectData);
     const {
         clinics
@@ -71,6 +101,34 @@ function Map () {
               }
             });
         });
+        map.current.on('click', ({ point }) => {
+            /* Determine if a feature in the "locations" layer exists at that point. */
+            const features = map.queryRenderedFeatures(point, {
+              layers: ['locations']
+            });
+          
+            /* If it does not exist, return */
+            if (!features.length) return;
+          
+            const clickedPoint = features[0];
+          
+            /* Fly to the point */
+            flyToClinic(clickedPoint);
+          
+            /* Close all other popups and display popup for clicked store */
+            createPopUp(clickedPoint);
+          
+            /* Highlight listing in sidebar (and remove highlight for all other listings) */
+            const activeItem = document.getElementsByClassName('active');
+            if (activeItem[0]) {
+              activeItem[0].classList.remove('active');
+            }
+            const listing = document.getElementById(
+              `listing-${clickedPoint.properties.id}`
+            );
+            listing.classList.add('active');
+        });
+          
         ClinicList(clinics)
     });
 

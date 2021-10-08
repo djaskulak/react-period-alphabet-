@@ -6,18 +6,18 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.7885012,
-          -122.4225186
+          -122.4225186,
+          37.7885012
         ]
       },
       "properties": {
         "name": "Planned Parenthood - San Francisco Health Center",
+        "located": "Own Building",
         "phoneFormatted": "(415) 821-1282",
         "phone": "4158211282",
         "address": "1522 Bush St",
         "city": "San Francisco",
         "country": "United States",
-        "crossStreet": "",
         "postalCode": "94109",
         "state": "CA"
       }
@@ -27,18 +27,18 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.75478744506836,
-          -122.4064712524414
+          -122.4064712524414,
+          37.75478744506836
         ]
       },
       "properties": {
         "name": "San Francisco Women's Health",
+        "located": "Zuckerberg San Francisco General Hospital and Trauma Center",
         "phoneFormatted": "(415) 206-3409",
         "phone": "4152063409",
         "address": "1001 Potrero Ave",
         "city": "San Francisco",
         "country": "United States",
-        "crossStreet": "",
         "postalCode": "94110",
         "state": "CA"
       }
@@ -48,19 +48,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -77.043929,
-          38.910525
+          -122.419837,
+          37.7693179
         ]
       },
       "properties": {
-        "phoneFormatted": "(202) 387-9338",
-        "phone": "2023879338",
-        "address": "1512 Connecticut Ave NW",
-        "city": "Washington DC",
+        "name": "Women's Community Clinic",
+        "located": "Own Building",
+        "phoneFormatted": "(415) 379-7800",
+        "phone": "4153797800",
+        "address": "1735 Mission St",
+        "city": "San Francisco",
         "country": "United States",
-        "crossStreet": "at Dupont Circle",
-        "postalCode": "20036",
-        "state": "D.C."
+        "postalCode": "94103",
+        "state": "CA"
       }
     },
     {
@@ -68,19 +69,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -77.0672,
-          38.90516896
+          -122.4393639,
+          37.7858067
         ]
       },
       "properties": {
-        "phoneFormatted": "(202) 337-9338",
-        "phone": "2023379338",
-        "address": "3333 M St NW",
-        "city": "Washington DC",
+        "name": "Women's Health Center",
+        "located": "UCSF Pediatrics at Mount Zion",
+        "phoneFormatted": "(415) 885-7788",
+        "phone": "4158857788",
+        "address": "2356 Sutter St",
+        "city": "San Francisco",
         "country": "United States",
-        "crossStreet": "at 34th St NW",
-        "postalCode": "20007",
-        "state": "D.C."
+        "postalCode": "94143",
+        "state": "CA"
       }
     },
     {
@@ -88,154 +90,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -77.002583742142,
-          38.887041080933
+          -122.43096160888672,
+          37.79132843017578
         ]
       },
       "properties": {
-        "phoneFormatted": "(202) 547-9338",
-        "phone": "2025479338",
-        "address": "221 Pennsylvania Ave SE",
-        "city": "Washington DC",
+        "name": "Women's Health Resource Center: California Pacific Medical Center",
+        "located": "CPMC Pacific Heights Outpatient Center",
+        "phoneFormatted": "(415) 600-0500",
+        "phone": "4156000500",
+        "address": "2333 Buchanan St",
+        "city": "San Francisco",
         "country": "United States",
-        "crossStreet": "btwn 2nd & 3rd Sts. SE",
-        "postalCode": "20003",
-        "state": "D.C."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -76.933492720127,
-          38.99225245786
-        ]
-      },
-      "properties": {
-        "address": "8204 Baltimore Ave",
-        "city": "College Park",
-        "country": "United States",
-        "postalCode": "20740",
-        "state": "MD"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.097083330154,
-          38.980979
-        ]
-      },
-      "properties": {
-        "phoneFormatted": "(301) 654-7336",
-        "phone": "3016547336",
-        "address": "4831 Bethesda Ave",
-        "cc": "US",
-        "city": "Bethesda",
-        "country": "United States",
-        "postalCode": "20814",
-        "state": "MD"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.359425054188,
-          38.958058116661
-        ]
-      },
-      "properties": {
-        "phoneFormatted": "(571) 203-0082",
-        "phone": "5712030082",
-        "address": "11935 Democracy Dr",
-        "city": "Reston",
-        "country": "United States",
-        "crossStreet": "btw Explorer & Library",
-        "postalCode": "20190",
-        "state": "VA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.10853099823,
-          38.880100922392
-        ]
-      },
-      "properties": {
-        "phoneFormatted": "(703) 522-2016",
-        "phone": "7035222016",
-        "address": "4075 Wilson Blvd",
-        "city": "Arlington",
-        "country": "United States",
-        "crossStreet": "at N Randolph St.",
-        "postalCode": "22203",
-        "state": "VA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.28784,
-          40.008008
-        ]
-      },
-      "properties": {
-        "phoneFormatted": "(610) 642-9400",
-        "phone": "6106429400",
-        "address": "68 Coulter Ave",
-        "city": "Ardmore",
-        "country": "United States",
-        "postalCode": "19003",
-        "state": "PA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.20121216774,
-          39.954030175164
-        ]
-      },
-      "properties": {
-        "phoneFormatted": "(215) 386-1365",
-        "phone": "2153861365",
-        "address": "3925 Walnut St",
-        "city": "Philadelphia",
-        "country": "United States",
-        "postalCode": "19104",
-        "state": "PA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.043959498405,
-          38.903883387232
-        ]
-      },
-      "properties": {
-        "phoneFormatted": "(202) 331-3355",
-        "phone": "2023313355",
-        "address": "1901 L St. NW",
-        "city": "Washington DC",
-        "country": "United States",
-        "crossStreet": "at 19th St",
-        "postalCode": "20036",
-        "state": "D.C."
+        "postalCode": "94115",
+        "state": "CA"
       }
     }
+    
 ]}
