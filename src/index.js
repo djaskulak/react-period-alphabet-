@@ -4,10 +4,23 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router} from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import rootReducer from './reducers'
+// import {composeWithDevTools} from 'redux-devtools-extension'
+// import thunk from 'redux-thunk'
+// import 'semantic-ui-css/semantic.min.css'
+import 'mapbox-gl/dist/mapbox-gl.css'
+const store = createStore(rootReducer)
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

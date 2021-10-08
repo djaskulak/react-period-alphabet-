@@ -9,7 +9,8 @@ function MapArea () {
                 <div className='heading'>
                     <h1>Map of Womens Health Clinics</h1>
                 </div>
-                <div id='listings' className='listings'></div>
+                <div id='listings' className='listings'>
+                </div>
             </div>
             <div id="map" className="map">
                 <Map />

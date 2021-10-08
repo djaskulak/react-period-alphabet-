@@ -1,3 +1,5 @@
+{"type": "FeatureCollection",
+"features": 
 [
     {
       "type": "Feature",
@@ -236,4 +238,4 @@
         "state": "D.C."
       }
     }
-]
+]}
