@@ -1,10 +1,10 @@
 import './App.css';
 import React from 'react';
-import { NavLink, Switch, Route } from 'react-router-dom';
-import NavBar from './components/navbar'
-import Intro from './components/intro';
-import Cards from './components/cards'
-import MapArea from './components/mapArea'
+import { Switch, Route } from 'react-router-dom';
+import NavBar from './components/navbar/navbar'
+import Intro from './components/intro/intro';
+import Cards from './components/cards/cards'
+import MapArea from './components/map/mapArea'
 
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 
@@ -14,7 +14,6 @@ function App() {
 
   return (
     <div className="App">
-      <Navigation />
       <Main />
       <NavBar />
       <Intro />
@@ -23,16 +22,6 @@ function App() {
     </div>
   );
 }
-
-const Navigation = () => (
-  <nav>
-    <ul>
-      <li><NavLink to='/'>Home</NavLink></li>
-      <li><NavLink to='/about'>About</NavLink></li>
-      <li><NavLink to='/contact'>Contact</NavLink></li>
-    </ul>
-  </nav>
-);
 
 const Main = () => (
   <Switch>

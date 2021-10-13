@@ -1,4 +1,4 @@
-import alphabet from '../data.json'
+import alphabet from './data.json'
 import './cards.css'
 
 function Cards () {
