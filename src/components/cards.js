@@ -12,7 +12,6 @@ function Cards () {
                     <li className="card">
                         <img src={process.env.PUBLIC_URL + '/images/' + letter.image} alt="card"/>
                         <div className="word">
-                            <h1>{letter.letter}</h1>
                             <h3>{letter.title}</h3>
                         </div>
                     </li>
