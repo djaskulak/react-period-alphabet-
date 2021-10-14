@@ -2,9 +2,9 @@ import './App.css';
 import React from 'react';
 import { NavLink, Switch, Route } from 'react-router-dom';
 
-import Home from './components/routes/home/home';
-import Cards from './components/routes/alphabet/cards';
-import MapArea from './components/routes/mapArea/mapArea';
+import Home from './components/home/home';
+import Cards from './components/alphabet/cards';
+import Map from './components/map/map';
 
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 
@@ -35,7 +35,7 @@ const Main = () => (
   <Switch>
       <Route exact path='/' component={Home}></Route>
       <Route exact path='/alphabet' component={Cards}></Route>
-      <Route exact path='/map' component={MapArea}></Route>
+      <Route exact path='/map' component={Map}></Route>
   </Switch>
 );
 

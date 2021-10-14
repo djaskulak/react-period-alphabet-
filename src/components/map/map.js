@@ -5,57 +5,6 @@ import React, { useRef, useEffect } from 'react';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
-
-function ClinicList({ features }) {
-    for (const { properties } of features) {
-        /* Add a new listing section to the sidebar. */
-        const listings = document.getElementById('listings');
-        const listing = listings.appendChild(document.createElement('div'));
-        /* Assign a unique `id` to the listing. */
-        listing.id = `listing-${properties.id}`;
-        /* Assign the `item` class to each listing for styling. */
-        listing.className = 'item';
-    
-        /* Add the link to the individual listing created above. */
-        const link = listing.appendChild(document.createElement('a'));
-        link.href = '#';
-        link.className = 'title';
-        link.id = `link-${properties.id}`;
-        link.innerHTML = `${properties.name}`;
-    
-        /* Add details to the individual listing. */
-        const details = listing.appendChild(document.createElement('div'));
-        details.innerHTML = `${properties.address}`;
-        if (properties.phone) {
-            details.innerHTML += ` · ${properties.phoneFormatted}`;
-        }
-        if (properties.distance) {
-            const roundedDistance = Math.round(properties.distance * 100) / 100;
-            details.innerHTML += `<div><strong>${roundedDistance} miles away</strong></div>`;
-        }
-
-        link.addEventListener('click', function () {
-            for (const feature of features) {
-              if (this.id === `link-${feature.properties.id}`) {
-                flyToClinic(feature);
-                createPopUp(feature);
-              }
-            }
-            const activeItem = document.getElementsByClassName('active');
-            if (activeItem[0]) {
-              activeItem[0].classList.remove('active');
-            }
-            this.parentNode.classList.add('active');
-        });
-    }
-}
-
-function flyToClinic(currentFeature) {
-    Map.flyTo({
-      center: currentFeature.geometry.coordinates,
-      zoom: 15
-    });
-}
   
 function createPopUp(currentFeature) {
     const popUps = document.getElementsByClassName('mapboxgl-popup');
@@ -77,6 +26,12 @@ function Map () {
         clinics
     } = data
 
+    function flyToClinic(currentFeature) {
+      map.current.flyTo({
+        center: currentFeature.geometry.coordinates,
+        zoom: 15
+      });
+    }
 
     useEffect(() => {
         if (map.current) return; // initialize map only once
@@ -118,7 +73,7 @@ function Map () {
             /* Close all other popups and display popup for clicked store */
             createPopUp(clickedPoint);
           
-            /* Highlight listing in sidebar (and remove highlight for all other listings) */
+            /* Highlight listing in sidebar (and remove highlight for all other listings) 
             const activeItem = document.getElementsByClassName('active');
             if (activeItem[0]) {
               activeItem[0].classList.remove('active');
@@ -127,15 +82,36 @@ function Map () {
               `listing-${clickedPoint.properties.id}`
             );
             listing.classList.add('active');
+
+            */
         });
-          
-        ClinicList(clinics)
     });
 
     return (
-        <div className="Map">
-            <div ref={mapContainer} className="map-container" />
+      <div className="MapArea">
+        <div className="banner">
+            <h1>MAP</h1>
         </div>
+        <div className="SideBar">
+          <div className='heading'>
+              <h1>Womens Health Clinics</h1>
+          </div>
+          <div className='listings'>
+            {/* Clinic Name */}
+            { clinics.features.map( clinic => {
+              return (
+                <div className="item">
+                  <p className="title" onClick={flyToClinic}> { clinic.properties.name } </p>
+                  <p> { clinic.properties.address } | { clinic.properties.phoneFormatted }</p>
+                </div>
+              )
+            } ) }
+          </div>
+        </div>
+        <div className="Map">
+          <div ref={mapContainer} className="map-container" />
+        </div>
+      </div>
     )
 }
 
