@@ -1,10 +1,10 @@
 import './App.css';
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import NavBar from './components/navbar/navbar'
-import Intro from './components/intro/intro';
-import Cards from './components/cards/cards'
-import MapArea from './components/map/mapArea'
+import { NavLink, Switch, Route } from 'react-router-dom';
+
+import Home from './components/routes/home';
+import Cards from './components/cards/cards';
+import MapArea from './components/routes/mapArea/mapArea';
 
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 
@@ -14,20 +14,28 @@ function App() {
 
   return (
     <div className="App">
+      <Navigation />
       <Main />
-      <NavBar />
-      <Intro />
-      <Cards />
-      <MapArea />
     </div>
   );
 }
 
+const Navigation = () => (
+  <div className="NavBar">
+      <img src={process.env.PUBLIC_URL + '/images/logo.png'} alt="logo"/>
+      <ul>
+          <li><NavLink to='/'>Home</NavLink></li>
+          <li><NavLink to='/cards'>Alphabet</NavLink></li>
+          <li><NavLink to='/map'>Map</NavLink></li>
+      </ul>
+  </div>
+);
+
 const Main = () => (
   <Switch>
-    {/* <Route path='/' component={Home}></Route>
-    <Route path='/about' component={About}></Route>
-    <Route path='/contact' component={Contact}></Route> */}
+      <Route path='/' component={Home}></Route>
+      <Route path='/cards' component={Cards}></Route>
+      <Route path='/map' component={MapArea}></Route>
   </Switch>
 );
 

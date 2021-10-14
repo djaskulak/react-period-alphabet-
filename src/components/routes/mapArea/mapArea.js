@@ -1,5 +1,5 @@
 import './mapArea.css';
-import Map from './map';
+import Map from '../../map/map';
 
 function MapArea () {
 
