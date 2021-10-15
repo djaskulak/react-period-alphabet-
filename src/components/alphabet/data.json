@@ -1,6 +1,7 @@
 [
     {
         "letter": "A",
+        "file": "cardRoutes/A.js",
         "title": "Accessibility",
         "content": "",
         "image": "A.jpg"
