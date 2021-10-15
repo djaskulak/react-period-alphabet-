@@ -5,17 +5,6 @@ import React, { useRef, useEffect } from 'react';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
-  
-function createPopUp(currentFeature) {
-    const popUps = document.getElementsByClassName('mapboxgl-popup');
-    /** Check if there is already a popup on the map and if so, remove it */
-    if (popUps[0]) popUps[0].remove();
-  
-    const popup = new mapboxgl.Popup({ closeOnClick: false })
-      .setLngLat(currentFeature.geometry.coordinates)
-      .setHTML(`<h4>${currentFeature.properties.name}</h4>`)
-      .addTo(Map);
-}
 
 function Map () {
     const mapContainer = useRef(null);
@@ -27,63 +16,64 @@ function Map () {
     } = data
 
     function flyToClinic(currentFeature) {
+      console.log(currentFeature)
       map.current.flyTo({
         center: currentFeature.geometry.coordinates,
         zoom: 15
       });
     }
 
+    function createPopUp(currentFeature) {
+      const popUps = document.getElementsByClassName('mapboxgl-popup');
+      /** Check if there is already a popup on the map and if so, remove it */
+      if (popUps[0]) popUps[0].remove();
+    
+      const popup = new mapboxgl.Popup({ closeOnClick: false })
+        .setLngLat(currentFeature.geometry.coordinates)
+        .setHTML(`<h4>${currentFeature.properties.name}</h4>`)
+        .addTo(map.current);
+    }
+
     useEffect(() => {
         if (map.current) return; // initialize map only once
         map.current = new mapboxgl.Map({
-            container: mapContainer.current,
-            style: 'mapbox://styles/mapbox/light-v10',
-            center: [-122.431297, 37.773972],
-            zoom: 13
+          container: mapContainer.current,
+          style: 'mapbox://styles/mapbox/light-v10',
+          center: [-122.431297, 37.773972],
+          zoom: 13
         });
         clinics.features.forEach(function (clinic, i) {
-            clinic.properties.id = i;
+          clinic.properties.id = i;
         });
         map.current.on('load', () => {
-            /* Add the data to your map as a layer */
-            map.current.addLayer({
-              id: 'locations',
-              type: 'circle',
-              /* Add a GeoJSON source containing place coordinates and information. */
-              source: {
-                type: 'geojson',
-                data: clinics
-              }
-            });
-        });
-        map.current.on('click', ({ point }) => {
-            /* Determine if a feature in the "locations" layer exists at that point. */
-            const features = map.queryRenderedFeatures(point, {
-              layers: ['locations']
-            });
-          
-            /* If it does not exist, return */
-            if (!features.length) return;
-          
-            const clickedPoint = features[0];
-          
-            /* Fly to the point */
-            flyToClinic(clickedPoint);
-          
-            /* Close all other popups and display popup for clicked store */
-            createPopUp(clickedPoint);
-          
-            /* Highlight listing in sidebar (and remove highlight for all other listings) 
-            const activeItem = document.getElementsByClassName('active');
-            if (activeItem[0]) {
-              activeItem[0].classList.remove('active');
+          /* Add the data to your map as a layer */
+          map.current.addLayer({
+            id: 'locations',
+            type: 'circle',
+            /* Add a GeoJSON source containing place coordinates and information. */
+            source: {
+              type: 'geojson',
+              data: clinics
             }
-            const listing = document.getElementById(
-              `listing-${clickedPoint.properties.id}`
-            );
-            listing.classList.add('active');
-
-            */
+          });
+        });
+        map.current.on('click', (e) => {
+          /* Determine if a feature in the "locations" layer exists at that point. */
+          console.log(map)
+          const features = map.current.queryRenderedFeatures(e.point, {
+            layers: ['locations']
+          });
+        
+          /* If it does not exist, return */
+          if (!features.length) return;
+        
+          const clickedPoint = features[0];
+        
+          /* Fly to the point */
+          flyToClinic(clickedPoint);
+        
+          /* Close all other popups and display popup for clicked store */
+          createPopUp(clickedPoint);
         });
     });
 
@@ -101,7 +91,7 @@ function Map () {
             { clinics.features.map( clinic => {
               return (
                 <div className="item">
-                  <p className="title" onClick={flyToClinic}> { clinic.properties.name } </p>
+                  <p className="title" onClick={() => flyToClinic(clinic) }> { clinic.properties.name } </p>
                   <p> { clinic.properties.address } | { clinic.properties.phoneFormatted }</p>
                 </div>
               )
