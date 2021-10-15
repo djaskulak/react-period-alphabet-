@@ -12,14 +12,14 @@ function Cards () {
                 </div>
                 <ul className="alphabet">
                     {alphabet.map(l => 
-                        <NavLink to={`/${l.letter}`}>
+                        // <NavLink to={`/${l.letter}`}>
                             <li className="card">
                                 <img src={process.env.PUBLIC_URL + '/images/' + l.image} alt="card"/>
                                 <div className="word">
                                     <h3>{l.title}</h3>
                                 </div>
                             </li>
-                        </NavLink>
+                        // </NavLink>
                     )}
                 </ul>
             </div>
