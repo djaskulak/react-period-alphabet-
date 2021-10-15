@@ -23,9 +23,9 @@ function Cards () {
                     )}
                 </ul>
             </div>
-            {alphabet.map(l => 
+            {/* {alphabet.map(l => 
                 <Route exact path={`/${l.letter}`} component={eval(l.letter)}/>
-            )}
+            )} */}
         </Switch>
     );
 }
